@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Profile
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-avatar (click)="selectImageSource()" class="profile-pic">
+    <ion-img [src]="(myStoredImage | async)?.image_src"></ion-img>
+  </ion-avatar>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Mohamed Jamal</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Engineer Mohamed Jamal
+    </ion-card-content>
+  </ion-card>
+
+
+
+</ion-content>

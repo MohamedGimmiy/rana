@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--returning an observable to be converted into an array-->
+  <!--button proprty make a feedback when clicking on card-->
+  <!--params providing activity details with id to navigate to page-->
+<!--   <ion-skeleton-text animated></ion-skeleton-text>
+ -->
+
+ <!--ion skeleton is used as a placeholder for weak internet connections  -->
+  <div *ngIf="!activityList">
+    <ion-card>
+      <ion-skeleton-text class="skeleton-image" animated></ion-skeleton-text>
+      <ion-card-header>
+        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text></ion-skeleton-text>
+      </ion-card-header>
+    </ion-card>
+    <ion-card>
+      <ion-skeleton-text class="skeleton-image" animated></ion-skeleton-text>
+      <ion-card-header>
+        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text></ion-skeleton-text>
+      </ion-card-header>
+    </ion-card>
+    <ion-card>
+      <ion-skeleton-text class="skeleton-image" animated></ion-skeleton-text>
+      <ion-card-header>
+        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text></ion-skeleton-text>
+      </ion-card-header>
+    </ion-card>
+    <ion-card>
+      <ion-skeleton-text class="skeleton-image" animated></ion-skeleton-text>
+      <ion-card-header>
+        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text></ion-skeleton-text>
+      </ion-card-header>
+    </ion-card>
+    <ion-card>
+      <ion-skeleton-text class="skeleton-image" animated></ion-skeleton-text>
+      <ion-card-header>
+        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text></ion-skeleton-text>
+      </ion-card-header>
+    </ion-card>
+  </div>
+
+
+
+
+    <ion-card [routerLink]="['activity-detail',activity.id]" button *ngFor="let activity of (activityList | async)">
+      <img [src]="activity.cropped" alt="">
+      <ion-card-header>
+        <ion-card-title>{{activity.name}}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+</ion-content>
